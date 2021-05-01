@@ -1,0 +1,31 @@
+<div class="main-container">
+    <div class="head-page">
+        <h1>Imigify</h1>
+    </div>
+    <div class="search-function-wrapper">
+        <div class="search-container">
+            <mat-form-field class="search-input">
+                <mat-label>Enter the image URL that you would like to save</mat-label>
+                <input matInput type="text" [(ngModel)]="imageUrlText">
+                <button mat-button *ngIf="imageUrlText" matSuffix mat-icon-button aria-label="Clear" (click)="imageUrlText=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="done-button">
+                <button *ngIf="imageUrlText" routerLink="/addImages" (click)="addImage()" mat-fab color="primary" matTooltip="Add Images to the Repository" aria-label="Example icon button with a home icon">
+                    <mat-icon>done</mat-icon>
+                </button>
+            </div>
+            <div>
+                <button routerLink="/" mat-fab color="warn" matTooltip="Return to the image page" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_backspace</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="image-preview-wrapper">
+        <div class="preview-image">
+            <img class="tile-image" src={{imageUrlText}}/>
+        </div>
+    </div>
+</div>

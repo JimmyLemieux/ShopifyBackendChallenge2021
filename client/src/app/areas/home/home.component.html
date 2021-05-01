@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="head-page">
+        <h1>Imigify</h1>
+    </div>
+    <div class="search-function-wrapper">
+        <div class="search-container">
+            <mat-form-field class="search-input">
+                <mat-label>Search For Images</mat-label>
+                <input matInput type="text" [(ngModel)]="value">
+                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <button (click)="searchImages()" routerLink="/addImages" mat-fab color="primary" matTooltip="Add Images to the Repository" aria-label="Example icon button with a home icon">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let image of imageResponse | imgFilter:value">
+            <img (click)="openDialog(image.imageUrl, image.name, image.tags)" class="tile-image" src={{image.imageUrl}}/>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

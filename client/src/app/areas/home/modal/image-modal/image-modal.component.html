@@ -1,0 +1,7 @@
+<div class="container">
+    <img src={{data.imageUrl}}/>
+    <p class="image-name">{{data.name}}</p>
+    <div class="image-features">
+        <p class="feats" *ngFor="let tag of data.tags">{{tag}},</p>
+    </div>
+</div>
