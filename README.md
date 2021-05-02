@@ -2,7 +2,7 @@
 
 ## Preparing the server
 
-```
+```Shell
 cd server
 pip3 install virtualenv
 virtualenv env
@@ -14,7 +14,7 @@ make server
 
 ## Preparing the client
 
-```
+```Shell
 cd client
 npm install
 ng serve
@@ -29,7 +29,7 @@ python3 -m pytest
 
 ## Server endpoints (main.py)
 
-```
+```Python
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
@@ -94,7 +94,7 @@ def generateImageTags():
 ## Server Side Features
 - Basic Restful client that uses Python and Flask to provide Get and Post endpoints. 
 - Persisting images with the use of a JSON file. Structured in such a way:
-```
+```JSON
 [
   {
 	"name": "some_image_name_provided",
